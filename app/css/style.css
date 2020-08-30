@@ -546,6 +546,15 @@ section.top-index {
 
 /* --------------------- /Section top-index ---------------------- */
 /* ---------------------- Section services ---------------------- */
+section.services.inner .content {
+  max-width: 100%;
+  text-align: left; }
+
+section.services.inner .section-title {
+  text-align: left; }
+  section.services.inner .section-title:after {
+    margin-left: 0; }
+
 section.services .content {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
@@ -582,18 +591,20 @@ section.services .boxes {
       margin-top: 20px; }
 
 @media only screen and (max-width: 950px) {
-  section.services .content {
-    font-size: 18px; }
-  section.services .boxes {
-    margin-top: 35px; }
-    section.services .boxes .box .icon {
-      height: 70px; }
-    section.services .boxes .box .title {
-      font-size: 22px;
-      margin-top: 15px; }
-    section.services .boxes .box .description {
-      font-size: 18px;
-      margin-top: 10px; } }
+  section.services {
+    padding-bottom: 55px; }
+    section.services .content {
+      font-size: 18px; }
+    section.services .boxes {
+      margin-top: 35px; }
+      section.services .boxes .box .icon {
+        height: 70px; }
+      section.services .boxes .box .title {
+        font-size: 22px;
+        margin-top: 15px; }
+      section.services .boxes .box .description {
+        font-size: 18px;
+        margin-top: 10px; } }
 
 @media only screen and (max-width: 700px) {
   section.services .boxes {
@@ -1422,3 +1433,58 @@ section.team .boxes {
           font-size: 18px; } }
 
 /* --------------------- /Section team ---------------------- */
+/* ---------------------- Section content-parts ---------------------- */
+section.content-parts .parts {
+  display: flex;
+  margin: 0 -20px; }
+  section.content-parts .parts .part {
+    width: 50%;
+    padding: 0 20px; }
+
+section.content-parts .section-title {
+  text-align: left; }
+  section.content-parts .section-title:after {
+    margin-left: 0; }
+
+section.content-parts .content {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #484848; }
+  section.content-parts .content p {
+    margin-top: 25px; }
+
+section.content-parts .btn {
+  margin-top: 55px; }
+
+section.content-parts .image {
+  -webkit-filter: drop-shadow(0px 0px 15px rgba(16, 70, 111, 0.55));
+          filter: drop-shadow(0px 0px 15px rgba(16, 70, 111, 0.55)); }
+  section.content-parts .image img {
+    max-width: 100%; }
+
+/* --------------------- /Section content-parts ---------------------- */
+/* ---------------------- Section list-columns ---------------------- */
+section.list-columns .section-title {
+  text-align: left; }
+  section.list-columns .section-title:after {
+    display: none; }
+
+section.list-columns ul {
+  -moz-column-count: 2;
+       column-count: 2;
+  -moz-column-gap: 75px;
+       column-gap: 75px;
+  margin-top: 35px; }
+  section.list-columns ul li {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #484848;
+    margin-top: 35px;
+    padding-left: 35px;
+    background: url("../images/icons/plus.png") no-repeat left top 5px; }
+    section.list-columns ul li:first-child {
+      margin-top: 0; }
+
+/* --------------------- /Section list-columns ---------------------- */

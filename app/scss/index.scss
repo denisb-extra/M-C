@@ -398,6 +398,18 @@ section.top-index {
 
 /* ---------------------- Section services ---------------------- */
 section.services {
+	&.inner {
+		.content {
+			max-width: 100%;
+			text-align: left;
+		}
+		.section-title {
+			text-align: left;
+			&:after {
+				margin-left: 0;
+			}
+		}
+	}
 	.content {
 		@include f-r;
 		font-size: 20px;
@@ -439,6 +451,7 @@ section.services {
 	}
 
 	@media only screen and (max-width : $mw) {
+		padding-bottom: 55px;
 		.content {
 			font-size: 18px;
 		}

@@ -325,4 +325,77 @@ section.team {
 }
 /* --------------------- /Section team ---------------------- */
 
-//test
+
+/* ---------------------- Section content-parts ---------------------- */
+section.content-parts {
+	.parts {
+		display: flex;
+		margin: 0 -20px;
+		.part {
+			width: 50%;
+			padding: 0 20px;
+			&:nth-child(1) {
+			}
+			&:nth-child(2) {
+			}
+		}
+	}
+
+	.section-title {
+		text-align: left;
+		&:after {
+			margin-left: 0;
+		}
+	}
+
+	.content {
+		@include f-r;
+		font-size: 20px;
+		color: #484848;
+		p {
+			margin-top: 25px;
+		}
+	}
+
+	.btn {
+		margin-top: 55px;
+	}
+
+	.image {
+		filter: drop-shadow(0px 0px 15px rgba(16,70,111,0.55));
+		img {
+			max-width: 100%;
+		}
+	}
+}
+/* --------------------- /Section content-parts ---------------------- */
+
+/* ---------------------- Section list-columns ---------------------- */
+section.list-columns {
+	.section-title {
+		text-align: left;
+		&:after {
+			display: none;
+		}
+	}
+
+	ul {
+		column-count: 2;
+		column-gap: 75px;
+		margin-top: 35px;
+		li {
+			@include f-r;
+			font-size: 20px;
+			color: #484848;
+			margin-top: 35px;
+			padding-left: 35px;
+			background: url("../images/icons/plus.png") no-repeat left top 5px;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+
+}
+/* --------------------- /Section list-columns ---------------------- */
