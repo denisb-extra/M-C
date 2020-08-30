@@ -1,0 +1,155 @@
+$mw: 950px;
+$tw: 1200px;
+$lw: 1370px;
+
+@mixin border {
+	$red: random(256)-1;
+	$green: random(256)-1;
+	$blue: random(256)-1;
+ 	border: 1px solid red;
+ 	border-color: rgb($red, $green, $blue);
+}
+
+@mixin placeholder-color($color) {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+	  color: $color;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	  color: $color;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	  color: $color;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	  color: $color;
+	}
+}
+
+
+@mixin flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap');
+
+@mixin t-l {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 300;
+}
+
+@mixin t-r {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 400;
+}
+
+@mixin t-b {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 700;
+}
+@mixin t-sb {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 600;
+}
+@mixin t-bl {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 900;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+@mixin f-l {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+
+@mixin f-r {
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+}
+
+@mixin f-b {
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+}
+
+
+
+/* /Fonts */
+
+
+
+
+/* Global */
+html {
+	margin: 0 !important;
+	overflow-x: hidden;
+}
+body {
+	position: relative;
+	margin: 0;
+  	padding: 0;
+  	overflow-x: hidden;
+  	@include f-r;
+  	font-size: 18px;
+  	padding-top: 85px;
+  	@media only screen and (max-width : $tw) {
+  		padding-top: 60px;
+  	}
+  	@media only screen and (max-width : $mw) {
+  		padding-top: 45px;
+  	}
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+*, *::before, *::after {
+	box-sizing: border-box;
+	direction: ltr;
+}
+
+p,h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+ul {
+	-webkit-padding-start: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+section {
+	width: 100%;
+	max-width: 1920px;
+	margin: auto;	
+	overflow: hidden;
+	position: relative;
+	padding: 90px 0;
+	@media only screen and (max-width : $lw) {
+		padding: 75px 0;
+	}
+	@media only screen and (max-width : $tw) {
+		padding: 55px 0;
+	}
+	@media only screen and (max-width : $mw) {
+		padding: 35px 0;
+	}
+}
+
+.section-inner {
+	max-width: 1388px;
+	padding: 0 10px;
+	width: 100%;
+	margin: auto;
+	position: relative;
+}
+
+
+@import 'parts';
+@import 'index';
+@import 'inner';
