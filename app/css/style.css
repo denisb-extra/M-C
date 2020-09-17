@@ -1,6 +1,7 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;600&display=swap");
 /* /Fonts */
 /* Global */
 html {
@@ -39,6 +40,12 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0; }
+
+.content ul {
+  list-style: disc;
+  padding-left: 25px; }
+  .content ul li {
+    margin-top: 10px; }
 
 section {
   width: 100%;
@@ -109,6 +116,10 @@ section {
   margin-top: 20px;
   transition: 0.5s;
   display: inline-block; }
+  .read-more.white {
+    color: #fff; }
+    .read-more.white i {
+      color: #fff; }
   .read-more i {
     position: relative;
     right: 0;
@@ -125,14 +136,14 @@ section {
 
 /* ----------------- /buttons -------------------- */
 .section-title {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
   font-size: 46px;
   line-height: 1;
   color: #393939;
   text-align: center; }
   .section-title .subtitle {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 600;
     font-size: 30px;
     color: #393939;
@@ -260,12 +271,14 @@ section {
 header {
   width: 100%;
   margin: auto;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 99;
   transition: 0.5s;
   background: #fff;
   height: 85px; }
+  header.scrolled {
+    box-shadow: 0px 2px 15px 0px rgba(50, 50, 50, 0.2); }
   header .header-inner {
     width: 100%;
     max-width: 1860px;
@@ -452,6 +465,41 @@ header {
             display: block; } }
 
 /* ----------------- /Header -------------------- */
+.floating-button {
+  position: fixed;
+  left: 0;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  background: #fff;
+  z-index: 99;
+  border-radius: 0 10px 10px 0;
+  box-shadow: 0px 0px 10px 5px rgba(50, 50, 50, 0.25);
+  cursor: pointer; }
+  .floating-button .icon {
+    background: #53a2b4;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .floating-button .text {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #1f2734;
+    padding: 15px; }
+  @media only screen and (max-width: 950px) {
+    .floating-button {
+      overflow: hidden;
+      background: transparent;
+      height: 40px; }
+      .floating-button .icon {
+        width: 40px; }
+      .floating-button .text {
+        display: none; } }
+
 /* ---------------------- Section top-index ---------------------- */
 section.top-index {
   height: 780px;
@@ -625,6 +673,8 @@ section.about-index {
   background: url("../images/index/bg-about.jpg") no-repeat;
   background-position: center left;
   background-size: auto 100%; }
+  section.about-index.inner {
+    background-size: auto auto; }
   section.about-index .parts {
     display: flex;
     align-items: center;
@@ -657,11 +707,16 @@ section.about-index {
   @media only screen and (max-width: 950px) {
     section.about-index {
       background-size: 180% auto;
-      background-position: bottom left;
+      background-position: top left;
       padding-top: 35px; }
+      section.about-index.inner {
+        background-position: bottom left;
+        background-size: 180% auto; }
+        section.about-index.inner .parts {
+          flex-direction: column-reverse; }
       section.about-index .parts {
         flex-wrap: wrap;
-        flex-direction: column-reverse; }
+        flex-direction: column; }
         section.about-index .parts .part {
           width: 100%; }
       section.about-index .title, section.about-index h1, section.about-index h2, section.about-index h3, section.about-index h4, section.about-index h5 {
@@ -679,7 +734,7 @@ section.how {
   padding-bottom: 75px;
   text-align: center; }
   section.how .title {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Playfair Display', serif;
     font-weight: 700;
     font-size: 46px;
     line-height: 1;
@@ -896,6 +951,109 @@ section.bottom-index .frame {
         margin-top: 25px; } }
 
 /* --------------------- /Section bottom-index ---------------------- */
+.wpcf7 {
+  margin-top: 30px; }
+  .wpcf7 .parts {
+    display: flex;
+    align-items: stretch;
+    margin: 0 -10px; }
+    .wpcf7 .parts .part {
+      width: 50%;
+      padding: 0 10px; }
+  .wpcf7 form {
+    position: relative;
+    text-align: right; }
+  .wpcf7 input,
+  .wpcf7 select,
+  .wpcf7 textarea {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    color: #283141;
+    border: none;
+    background: #fff;
+    outline: none;
+    border-radius: 10px;
+    padding: 13px;
+    width: 100%;
+    height: 100%; }
+    .wpcf7 input::-webkit-input-placeholder,
+    .wpcf7 select::-webkit-input-placeholder,
+    .wpcf7 textarea::-webkit-input-placeholder {
+      /* WebKit browsers */
+      color: #283141; }
+    .wpcf7 input:-moz-placeholder,
+    .wpcf7 select:-moz-placeholder,
+    .wpcf7 textarea:-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      color: #283141; }
+    .wpcf7 input::-moz-placeholder,
+    .wpcf7 select::-moz-placeholder,
+    .wpcf7 textarea::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      color: #283141; }
+    .wpcf7 input:-ms-input-placeholder,
+    .wpcf7 select:-ms-input-placeholder,
+    .wpcf7 textarea:-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      color: #283141; }
+  .wpcf7 select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../images/icons/ard.png");
+    background-repeat: no-repeat;
+    background-position: right 15px center; }
+  .wpcf7 .wpcf7-form-control-wrap {
+    display: block;
+    margin-top: 15px;
+    position: relative;
+    overflow: visible; }
+    .wpcf7 .wpcf7-form-control-wrap:first-child {
+      margin-top: 0; }
+  .wpcf7 .your-message {
+    height: 100%; }
+    .wpcf7 .your-message textarea {
+      height: 100%; }
+  .wpcf7 input[type="submit"] {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    background: #f58b3d;
+    padding: 18px 55px;
+    border-radius: 50px;
+    display: block;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+    width: auto;
+    margin-top: 25px;
+    border: none;
+    float: right; }
+    .wpcf7 input[type="submit"]:hover {
+      background: #5dbbce; }
+  .wpcf7 span[role="alert"] {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 11px;
+    color: red;
+    position: absolute;
+    left: 13px;
+    bottom: 1px;
+    opacity: 0.75; }
+  .wpcf7 .wpcf7-response-output {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #f58b3d;
+    position: absolute;
+    bottom: -50px;
+    border: none !important;
+    padding: 0;
+    margin: 0; }
+  .wpcf7 .ajax-loader {
+    display: none; }
+
 /* ---------------------- Section contact-bottom ---------------------- */
 section.contact-bottom {
   background: url("../images/index/bg-contact.jpg") no-repeat;
@@ -915,107 +1073,6 @@ section.contact-bottom {
     font-size: 97px;
     line-height: 1;
     color: #fff; }
-  section.contact-bottom .wpcf7 {
-    margin-top: 30px; }
-    section.contact-bottom .wpcf7 .parts {
-      display: flex;
-      align-items: stretch;
-      margin: 0 -10px; }
-      section.contact-bottom .wpcf7 .parts .part {
-        width: 50%;
-        padding: 0 10px; }
-    section.contact-bottom .wpcf7 form {
-      position: relative;
-      text-align: right; }
-    section.contact-bottom .wpcf7 input,
-    section.contact-bottom .wpcf7 select,
-    section.contact-bottom .wpcf7 textarea {
-      font-family: 'Lato', sans-serif;
-      font-weight: 300;
-      font-size: 17px;
-      color: #283141;
-      border: none;
-      background: #fff;
-      outline: none;
-      border-radius: 10px;
-      padding: 13px;
-      width: 100%;
-      height: 100%; }
-      section.contact-bottom .wpcf7 input::-webkit-input-placeholder,
-      section.contact-bottom .wpcf7 select::-webkit-input-placeholder,
-      section.contact-bottom .wpcf7 textarea::-webkit-input-placeholder {
-        /* WebKit browsers */
-        color: #283141; }
-      section.contact-bottom .wpcf7 input:-moz-placeholder,
-      section.contact-bottom .wpcf7 select:-moz-placeholder,
-      section.contact-bottom .wpcf7 textarea:-moz-placeholder {
-        /* Mozilla Firefox 4 to 18 */
-        color: #283141; }
-      section.contact-bottom .wpcf7 input::-moz-placeholder,
-      section.contact-bottom .wpcf7 select::-moz-placeholder,
-      section.contact-bottom .wpcf7 textarea::-moz-placeholder {
-        /* Mozilla Firefox 19+ */
-        color: #283141; }
-      section.contact-bottom .wpcf7 input:-ms-input-placeholder,
-      section.contact-bottom .wpcf7 select:-ms-input-placeholder,
-      section.contact-bottom .wpcf7 textarea:-ms-input-placeholder {
-        /* Internet Explorer 10+ */
-        color: #283141; }
-    section.contact-bottom .wpcf7 select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      background-image: url("../images/icons/ard.png");
-      background-repeat: no-repeat;
-      background-position: right 15px center; }
-    section.contact-bottom .wpcf7 .wpcf7-form-control-wrap {
-      display: block;
-      margin-top: 15px;
-      position: relative;
-      overflow: visible; }
-      section.contact-bottom .wpcf7 .wpcf7-form-control-wrap:first-child {
-        margin-top: 0; }
-    section.contact-bottom .wpcf7 .your-message {
-      height: 100%; }
-      section.contact-bottom .wpcf7 .your-message textarea {
-        height: 100%; }
-    section.contact-bottom .wpcf7 input[type="submit"] {
-      font-family: 'Lato', sans-serif;
-      font-weight: 700;
-      font-size: 18px;
-      color: #fff;
-      background: #f58b3d;
-      padding: 18px 55px;
-      border-radius: 50px;
-      display: block;
-      cursor: pointer;
-      transition: 0.5s;
-      position: relative;
-      width: auto;
-      margin-top: 25px;
-      border: none;
-      float: right; }
-      section.contact-bottom .wpcf7 input[type="submit"]:hover {
-        background: #5dbbce; }
-    section.contact-bottom .wpcf7 span[role="alert"] {
-      font-family: 'Lato', sans-serif;
-      font-weight: 400;
-      font-size: 14px;
-      color: #B2D87E;
-      position: absolute;
-      left: 17px;
-      bottom: 2px; }
-    section.contact-bottom .wpcf7 .wpcf7-response-output {
-      font-family: 'Lato', sans-serif;
-      font-weight: 400;
-      font-size: 16px;
-      color: #B2D87E;
-      position: absolute;
-      bottom: -50px;
-      border: none;
-      padding: 0;
-      margin: 0; }
-    section.contact-bottom .wpcf7 .ajax-loader {
-      display: none; }
   @media only screen and (max-width: 1200px) {
     section.contact-bottom .title {
       font-size: 75px; } }
@@ -1077,6 +1134,9 @@ footer .part-top {
         font-weight: 300;
         font-size: 17px;
         margin-top: 20px; }
+        footer .part-top .cols .col .content ul {
+          list-style: none;
+          padding-left: 0; }
         footer .part-top .cols .col .content a {
           color: #fff;
           transition: 0.5s; }
@@ -1179,6 +1239,56 @@ footer .part-bottom {
       justify-content: center; } }
 
 /* --------------------- /Footer ---------------------- */
+/* ---------------------- .popup ---------------------- */
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .popup .bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 1; }
+  .popup .close {
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    cursor: pointer;
+    color: #393939; }
+  .popup .section-title {
+    font-size: 30px; }
+  .popup .wpcf7 {
+    margin: auto;
+    margin-top: 40px; }
+    .popup .wpcf7 input,
+    .popup .wpcf7 select,
+    .popup .wpcf7 textarea {
+      border: 1px solid #c8ccd3; }
+    .popup .wpcf7 input[type="submit"] {
+      border: none;
+      float: none;
+      margin: auto;
+      margin-top: 35px; }
+  .popup .inner {
+    padding: 30px;
+    width: 95%;
+    max-width: 500px;
+    background: #f8fafc;
+    overflow: auto;
+    position: relative;
+    z-index: 2; }
+
+/* --------------------- /.popup ---------------------- */
 /* ---------------------- Section top-inner ---------------------- */
 section.top-inner {
   padding: 55px 0;
@@ -1463,28 +1573,437 @@ section.content-parts .image {
   section.content-parts .image img {
     max-width: 100%; }
 
+@media only screen and (max-width: 950px) {
+  section.content-parts .parts {
+    flex-wrap: wrap; }
+    section.content-parts .parts .part {
+      width: 100%; }
+      section.content-parts .parts .part:nth-child(2) {
+        margin-top: 25px; }
+  section.content-parts .content {
+    font-size: 18px; }
+  section.content-parts .btn {
+    margin-top: 35px; } }
+
 /* --------------------- /Section content-parts ---------------------- */
 /* ---------------------- Section list-columns ---------------------- */
-section.list-columns .section-title {
-  text-align: left; }
-  section.list-columns .section-title:after {
-    display: none; }
+section.list-columns {
+  padding: 50px 0; }
+  section.list-columns .section-title {
+    text-align: left; }
+    section.list-columns .section-title:after {
+      display: none; }
+  section.list-columns ul {
+    -moz-column-count: 2;
+         column-count: 2;
+    -moz-column-gap: 75px;
+         column-gap: 75px;
+    margin-top: 35px; }
+    section.list-columns ul li {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #484848;
+      margin-top: 35px;
+      padding-left: 35px;
+      background: url("../images/icons/plus.png") no-repeat left top 5px; }
+      section.list-columns ul li:first-child {
+        margin-top: 0; }
+  @media only screen and (max-width: 950px) {
+    section.list-columns {
+      padding: 35px 0; }
+      section.list-columns ul {
+        -moz-column-count: 1;
+             column-count: 1; }
+        section.list-columns ul li {
+          font-size: 18px;
+          margin-top: 25px; } }
 
-section.list-columns ul {
-  -moz-column-count: 2;
-       column-count: 2;
-  -moz-column-gap: 75px;
-       column-gap: 75px;
-  margin-top: 35px; }
-  section.list-columns ul li {
+/* --------------------- /Section list-columns ---------------------- */
+/* ---------------------- Section testimonials ---------------------- */
+section.testimonials .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0;
+  margin: -20px;
+  margin-top: 50px; }
+  section.testimonials .boxes .box {
+    width: 33.333%;
+    margin: 0;
+    padding: 20px;
+    display: block;
+    position: relative; }
+    section.testimonials .boxes .box .inner {
+      overflow: hidden;
+      position: relative;
+      background: #f8fafc;
+      border-radius: 0 50px;
+      padding: 40px;
+      height: 100%; }
+    section.testimonials .boxes .box .name {
+      font-family: 'Lato', sans-serif;
+      font-weight: 700;
+      font-size: 22px;
+      color: #484848; }
+    section.testimonials .boxes .box .content {
+      font-family: 'Lato', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      color: #484848; }
+      section.testimonials .boxes .box .content p {
+        margin-top: 15px; }
+    section.testimonials .boxes .box .person {
+      display: flex;
+      align-items: center;
+      margin-top: 25px; }
+      section.testimonials .boxes .box .person .image {
+        flex-shrink: 0;
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        border: 5px solid #fff;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-filter: drop-shadow(0px 0px 5px rgba(16, 70, 111, 0.25));
+                filter: drop-shadow(0px 0px 5px rgba(16, 70, 111, 0.25)); }
+      section.testimonials .boxes .box .person .caption {
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: #484848;
+        margin-left: 10px; }
+
+@media only screen and (max-width: 1200px) {
+  section.testimonials .boxes {
+    margin-top: 50px; } }
+
+@media only screen and (max-width: 950px) {
+  section.testimonials {
+    padding: 35px 0; }
+    section.testimonials .boxes {
+      margin: -10px;
+      margin-top: 35px; }
+      section.testimonials .boxes .box {
+        width: 100%;
+        padding: 10px; }
+        section.testimonials .boxes .box .inner {
+          border-radius: 0 30px;
+          padding: 20px; } }
+
+/* --------------------- /Section testimonials ---------------------- */
+/* ---------------------- Section blog ---------------------- */
+section.blog.more {
+  background: #f8fafc; }
+
+section.blog .section-title {
+  margin-bottom: 55px; }
+
+section.blog .boxes {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0;
+  margin: -20px; }
+  section.blog .boxes .box {
+    width: 33.333%;
+    margin: 0;
+    padding: 20px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    cursor: pointer; }
+    section.blog .boxes .box .inner {
+      overflow: hidden;
+      position: relative; }
+    section.blog .boxes .box .image {
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      section.blog .boxes .box .image img {
+        height: 100%;
+        width: auto;
+        flex-shrink: 0; }
+      section.blog .boxes .box .image:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, #12254d, rgba(18, 37, 77, 0));
+        z-index: 2;
+        pointer-events: none;
+        z-index: 1; }
+    section.blog .boxes .box .info {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      left: 30px;
+      color: #fff;
+      z-index: 2; }
+      section.blog .boxes .box .info .title {
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        font-size: 22px; }
+      section.blog .boxes .box .info .description {
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        margin-top: 0px;
+        opacity: 0;
+        max-height: 0;
+        transition: 0.5s; }
+    section.blog .boxes .box:hover .info .description {
+      opacity: 1;
+      max-height: 110px;
+      margin-top: 10px; }
+
+@media only screen and (max-width: 1200px) {
+  section.blog .boxes {
+    margin: -15px; }
+    section.blog .boxes .box {
+      padding: 15px; }
+      section.blog .boxes .box .image {
+        height: 350px; }
+      section.blog .boxes .box .info {
+        bottom: 20px;
+        right: 20px;
+        left: 20px; }
+        section.blog .boxes .box .info .title {
+          font-size: 20px; }
+        section.blog .boxes .box .info .description {
+          font-size: 16px; } }
+
+@media only screen and (max-width: 950px) {
+  section.blog .section-title {
+    margin-bottom: 35px; }
+  section.blog .boxes {
+    margin: -5px; }
+    section.blog .boxes .box {
+      padding: 5px;
+      width: 50%; }
+      section.blog .boxes .box .image {
+        height: 240px; }
+      section.blog .boxes .box .info {
+        bottom: 15px;
+        right: 15px;
+        left: 15px; }
+        section.blog .boxes .box .info .title {
+          font-size: 18px;
+          line-height: 1; }
+        section.blog .boxes .box .info .description {
+          font-size: 16px;
+          display: none; } }
+
+/* --------------------- /Section blog ---------------------- */
+/* ---------------------- Section post ---------------------- */
+section.post .img-main {
+  width: 50%;
+  float: right;
+  margin-left: 50px;
+  margin-bottom: 50px; }
+  section.post .img-main.mobile {
+    display: none; }
+  section.post .img-main img {
+    width: 100%; }
+
+section.post .content {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: #484848; }
+  section.post .content p, section.post .content h1, section.post .content h2, section.post .content h3, section.post .content h4, section.post .content h5 {
+    margin-top: 25px; }
+
+@media only screen and (max-width: 950px) {
+  section.post .content {
+    font-size: 18px; }
+    section.post .content p {
+      margin-top: 15px; }
+  section.post .img-main {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    margin-top: 20px;
+    display: none; }
+    section.post .img-main.mobile {
+      display: block; } }
+
+/* --------------------- /Section post ---------------------- */
+/* ---------------------- Section questions ---------------------- */
+section.questions .parts {
+  font-size: 0;
+  display: flex;
+  margin: 0 -30px;
+  margin-top: 55px; }
+  section.questions .parts .part {
+    width: 50%;
+    padding: 0 30px; }
+
+section.questions .accordion h3, section.questions .accordion .h3 {
+  padding: 30px;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1;
+  color: #484848;
+  background: #f8fafc;
+  padding-left: 110px;
+  position: relative;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  margin-top: 25px;
+  border: 1px solid #12254d; }
+  section.questions .accordion h3 .ui-accordion-header-icon, section.questions .accordion .h3 .ui-accordion-header-icon {
+    display: none; }
+  section.questions .accordion h3:first-child, section.questions .accordion .h3:first-child {
+    margin-top: 0; }
+  section.questions .accordion h3:after, section.questions .accordion .h3:after {
+    display: inline-block;
+    font-family: FontAwesome;
+    content: "\f067";
+    color: #fff;
+    font-size: 25px;
+    line-height: 100%;
+    text-align: center;
+    padding-top: 2px;
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+  section.questions .accordion h3:before, section.questions .accordion .h3:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    background: #12254d; }
+  section.questions .accordion h3.ui-state-active:after, section.questions .accordion .h3.ui-state-active:after {
+    content: "\f068"; }
+
+section.questions .accordion .content {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #484848;
+  background: #f8fafc;
+  padding: 25px;
+  padding-bottom: 50px;
+  padding-left: 110px;
+  position: relative;
+  top: -1px;
+  border-left: 1px solid #12254d;
+  border-right: 1px solid #12254d;
+  border-bottom: 1px solid #12254d; }
+  section.questions .accordion .content a {
+    display: block;
+    margin-top: 15px; }
+  section.questions .accordion .content:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    background: #e8edf3; }
+
+@media only screen and (max-width: 950px) {
+  section.questions .parts {
+    flex-wrap: wrap;
+    margin-top: 35px; }
+    section.questions .parts .part {
+      width: 100%; }
+      section.questions .parts .part:nth-child(2) {
+        margin-top: 10px; }
+  section.questions .accordion h3, section.questions .accordion .h3 {
+    font-size: 18px;
+    padding: 15px;
+    padding-left: 75px;
+    margin-top: 10px; }
+    section.questions .accordion h3:before, section.questions .accordion .h3:before {
+      width: 60px; }
+    section.questions .accordion h3:after, section.questions .accordion .h3:after {
+      left: 30px; }
+  section.questions .accordion .content {
+    font-size: 16px;
+    padding: 15px;
+    padding-left: 75px;
+    padding-bottom: 30px; }
+    section.questions .accordion .content:before {
+      width: 60px; } }
+
+/* ---------------------- /Section questions ---------------------- */
+/* ---------------------- Section contacts ---------------------- */
+section.contacts {
+  background: #f8fafc;
+  position: relative; }
+  section.contacts .person {
+    position: absolute;
+    bottom: 0;
+    max-width: 36%; }
+    section.contacts .person.right {
+      right: 0; }
+    section.contacts .person.left {
+      left: 0; }
+  section.contacts .section-inner {
+    max-width: 660px; }
+  section.contacts .content {
     font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 20px;
     color: #484848;
-    margin-top: 35px;
-    padding-left: 35px;
-    background: url("../images/icons/plus.png") no-repeat left top 5px; }
-    section.list-columns ul li:first-child {
-      margin-top: 0; }
+    text-align: center;
+    margin: auto;
+    margin-top: 25px; }
+  section.contacts .wpcf7 {
+    margin: auto;
+    margin-top: 40px; }
+    section.contacts .wpcf7 input,
+    section.contacts .wpcf7 select,
+    section.contacts .wpcf7 textarea {
+      border: 1px solid #c8ccd3; }
+    section.contacts .wpcf7 input[type="submit"] {
+      border: none;
+      float: none;
+      margin: auto;
+      margin-top: 35px; }
+  section.contacts .contacts {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px; }
+    section.contacts .contacts p {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-size: 17px;
+      color: #393939;
+      margin: 0 15px; }
+  @media only screen and (max-width: 950px) {
+    section.contacts .person {
+      max-width: 50%; }
+    section.contacts .contacts {
+      flex-wrap: wrap; }
+      section.contacts .contacts p {
+        width: 100%;
+        margin: 10px;
+        text-align: center; }
+    section.contacts .wpcf7 {
+      margin-top: 30px; }
+      section.contacts .wpcf7 .parts {
+        flex-wrap: wrap; }
+        section.contacts .wpcf7 .parts .part {
+          width: 100%;
+          padding: 0 10px; }
+          section.contacts .wpcf7 .parts .part:nth-child(2) {
+            margin-top: 15px; } }
 
-/* --------------------- /Section list-columns ---------------------- */
+/* --------------------- /Section contacts ---------------------- */

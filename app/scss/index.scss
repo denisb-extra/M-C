@@ -2,12 +2,15 @@
 header {
 	width: 100%;
 	margin: auto;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	z-index: 99;
 	transition: 0.5s;
 	background: #fff;
 	height: 85px;
+	&.scrolled {
+		box-shadow: 0px 2px 15px 0px rgba(50, 50, 50, 0.2);
+	}
 	.header-inner  {
 		width: 100%;
 		max-width: 1860px;
@@ -269,6 +272,46 @@ header {
 /* ----------------- /Header -------------------- */
 
 
+.floating-button {
+	position: fixed;
+	left: 0;
+	bottom: 10px;
+	display: flex;
+	align-items: center;
+	height: 70px;
+	background: #fff;
+	z-index: 99;
+	border-radius: 0 10px 10px 0;
+	box-shadow: 0px 0px 10px 5px rgba(50, 50, 50, 0.25);
+	cursor: pointer;
+
+	.icon {
+		background: #53a2b4;
+		width: 60px;
+		height: 100%;
+		@include flex-center;
+	}
+
+	.text {
+		@include t-sb;
+		font-size: 20px;
+		color: #1f2734;
+		padding: 15px;
+	}
+
+	@media only screen and (max-width : $mw) {
+		overflow: hidden;
+		background: transparent;
+		height: 40px;
+		.icon {
+			width: 40px;
+		}
+		.text {
+			display: none;
+		}
+	}
+}
+
 /* ---------------------- Section top-index ---------------------- */
 section.top-index {
 	height: 780px;
@@ -499,6 +542,10 @@ section.about-index {
 	background-position: center left;
 	background-size:  auto 100%;
 
+	&.inner {
+		background-size:  auto auto;
+	}
+
 	.parts {
 		display: flex;
 		align-items: center;
@@ -552,11 +599,19 @@ section.about-index {
 
 	@media only screen and (max-width : $mw) {
 		background-size: 180% auto;
-		background-position: bottom left;
+		background-position: top left;
 		padding-top: 35px;
+
+		&.inner {
+			background-position: bottom left;
+			background-size: 180% auto;
+			.parts {
+				flex-direction: column-reverse;
+			}
+		}
 		.parts {
 			flex-wrap: wrap;
-			flex-direction: column-reverse;	
+			flex-direction: column;	
 			.part {
 				width: 100%;
 			}
@@ -585,7 +640,7 @@ section.how {
 	padding-bottom: 75px;
 	text-align: center;
 	.title {
-		@include t-b;
+		@include p-b;
 		font-size: 46px;
 		line-height: 1;
 		color: #fff;
@@ -893,6 +948,108 @@ section.bottom-index {
 }
 /* --------------------- /Section bottom-index ---------------------- */
 
+
+.wpcf7 {
+    margin-top: 30px;
+    .parts {
+        display: flex;
+        align-items: stretch;
+        margin: 0 -10px;
+        .part {
+            width: 50%;
+            padding: 0 10px;
+        }
+    }
+    form {
+        position: relative;
+        text-align: right;
+       
+    }
+    input,
+    select,
+    textarea {
+        @include f-l;
+        font-size: 17px;
+        color: #283141;
+        @include placeholder-color(#283141);
+        border: none;
+        background: #fff;
+        outline: none;
+        border-radius: 10px;
+        padding: 13px;
+        width: 100%;
+        height: 100%;
+    }
+
+    select {
+    	-webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("../images/icons/ard.png");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+    }
+
+    .wpcf7-form-control-wrap {
+        display: block;
+        margin-top: 15px;
+        &:first-child {
+        	margin-top: 0;
+        }
+        //width: 40%;
+        position: relative;
+        overflow: visible;
+    }
+    .your-message {
+    	height: 100%;
+
+    	textarea {
+    		height: 100%;
+    	}
+    }
+    input[type="submit"] {
+        @include f-b;
+        font-size: 18px;
+        color: #fff;
+        background: #f58b3d;
+        padding: 18px 55px;
+        border-radius: 50px;
+        display: block;
+        cursor: pointer;
+        transition: 0.5s;
+        position: relative;
+        width: auto;
+        margin-top: 25px;
+        border: none;
+        float: right;
+
+        &:hover {
+        	background: #5dbbce;
+        }
+    }
+    span[role="alert"] {
+        @include f-r;
+        font-size: 11px;
+        color: red;
+        position: absolute;
+        left: 13px;
+        bottom: 1px;
+        opacity: 0.75;
+    }
+    .wpcf7-response-output {
+        @include f-r;
+        font-size: 16px;
+        color: #f58b3d;
+        position: absolute;
+        bottom: -50px;
+        border: none !important;
+        padding: 0;
+        margin: 0;
+    }
+    .ajax-loader {
+        display: none;
+    }
+}
+
 /* ---------------------- Section contact-bottom ---------------------- */
 section.contact-bottom {
 	background: url("../images/index/bg-contact.jpg") no-repeat;
@@ -921,104 +1078,7 @@ section.contact-bottom {
 		color: #fff;
 	}
 
-	.wpcf7 {
-        margin-top: 30px;
-        .parts {
-            display: flex;
-            align-items: stretch;
-            margin: 0 -10px;
-            .part {
-                width: 50%;
-                padding: 0 10px;
-            }
-        }
-        form {
-            position: relative;
-            text-align: right;
-        }
-        input,
-        select,
-        textarea {
-            @include f-l;
-            font-size: 17px;
-            color: #283141;
-            @include placeholder-color(#283141);
-            border: none;
-            background: #fff;
-            outline: none;
-            border-radius: 10px;
-            padding: 13px;
-            width: 100%;
-            height: 100%;
-        }
-
-        select {
-        	-webkit-appearance: none;
-            -moz-appearance: none;
-            background-image: url("../images/icons/ard.png");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-        }
-
-        .wpcf7-form-control-wrap {
-            display: block;
-            margin-top: 15px;
-            &:first-child {
-            	margin-top: 0;
-            }
-            //width: 40%;
-            position: relative;
-            overflow: visible;
-        }
-        .your-message {
-        	height: 100%;
-
-        	textarea {
-        		height: 100%;
-        	}
-        }
-        input[type="submit"] {
-            @include f-b;
-            font-size: 18px;
-            color: #fff;
-            background: #f58b3d;
-            padding: 18px 55px;
-            border-radius: 50px;
-            display: block;
-            cursor: pointer;
-            transition: 0.5s;
-            position: relative;
-            width: auto;
-            margin-top: 25px;
-            border: none;
-            float: right;
-
-            &:hover {
-            	background: #5dbbce;
-            }
-        }
-        span[role="alert"] {
-            @include f-r;
-            font-size: 14px;
-            color: #B2D87E;
-            position: absolute;
-            left: 17px;
-            bottom: 2px;
-        }
-        .wpcf7-response-output {
-            @include f-r;
-            font-size: 16px;
-            color: #B2D87E;
-            position: absolute;
-            bottom: -50px;
-            border: none;
-            padding: 0;
-            margin: 0;
-        }
-        .ajax-loader {
-            display: none;
-        }
-    }
+	
 
     @media only screen and (max-width : $tw) {
     	.title {
@@ -1110,6 +1170,10 @@ footer {
 					@include f-l;
 					font-size: 17px;
 					margin-top: 20px;
+					ul {
+						list-style: none;
+						padding-left: 0;
+					}
 					a {
 						color: #fff;
 						transition: 0.5s;
@@ -1253,3 +1317,67 @@ footer {
 	}
 }
 /* --------------------- /Footer ---------------------- */
+
+
+/* ---------------------- .popup ---------------------- */
+.popup {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: rgba(0,0,0,0.5);
+
+	@include flex-center;
+
+	.bg {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background: transparent;
+		z-index: 1;
+	}
+
+	.close {
+		position: absolute;
+		right: 5px;
+		top: 0px;
+		cursor: pointer;
+		color: #393939;
+	}
+
+	.section-title {
+		font-size: 30px;
+	}
+
+	.wpcf7 {
+		margin: auto;
+		margin-top: 40px;
+
+		input,
+	    select,
+	    textarea {
+	        border: 1px solid #c8ccd3;
+	    }
+
+	    input[type="submit"] {
+	    	border: none;
+	    	float: none;
+	    	margin: auto;
+	    	margin-top: 35px;
+	    }
+	}
+	.inner {
+		padding: 30px;
+		width: 95%;
+		max-width: 500px;
+		background: #f8fafc;
+		overflow: auto;
+		position: relative;
+		z-index: 2;
+	}
+}
+/* --------------------- /.popup ---------------------- */

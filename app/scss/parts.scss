@@ -49,6 +49,12 @@
 	margin-top: 20px;
 	transition: 0.5s;
 	display: inline-block;
+	&.white {
+		color: #fff;
+		i {
+			color: #fff;
+		}
+	}
 	i {
 		position: relative;
 		right: 0;
@@ -69,14 +75,14 @@
 }
 /* ----------------- /buttons -------------------- */
 .section-title {
-	@include t-b;
+	@include p-b;
 	font-size: 46px;
 	line-height: 1;
 	color: #393939;
 	text-align: center;
 
 	.subtitle {
-		@include t-sb;
+		@include p-sb;
 		font-size: 30px;
 		color: #393939;
 		margin-top: 10px;

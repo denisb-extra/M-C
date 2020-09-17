@@ -78,6 +78,19 @@ $lw: 1370px;
 
 
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;600&display=swap');
+
+@mixin p-b {
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+}
+
+@mixin p-sb {
+	font-family: 'Playfair Display', serif;
+	font-weight: 600;
+}
+
+
 /* /Fonts */
 
 
@@ -123,6 +136,15 @@ ul {
 	margin: 0;
 	padding: 0;
 }
+
+.content ul {
+	list-style: disc;
+	padding-left: 25px;
+	li {
+		margin-top: 10px;
+	}
+}
+
 section {
 	width: 100%;
 	max-width: 1920px;

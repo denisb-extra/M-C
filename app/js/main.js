@@ -23,6 +23,18 @@ $(document).ready(function ($) {
         thankyouPage = getFieldValueByName(inputs, "thankyou-page");
         if(thankyouPage) window.location = thankyouPage;
     }, false );
+
+
+    $(".popup .bg").on("click", function(){
+        $(this).closest(".popup").fadeOut();
+    })
+
+
+    $(document).mouseleave(function () {
+        //$(".popup").fadeIn();
+    });
+
+    //$(".popup").hide();
 });
 
 function getFieldValueByName(ar, name){
