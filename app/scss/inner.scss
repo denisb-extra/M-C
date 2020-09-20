@@ -50,7 +50,7 @@ section.top-inner {
 /* ---------------------- Section steps ---------------------- */
 section.steps {
 	.content {
-		@include f-r;
+		@include f-l;
 		font-size: 20px;
 		line-height: 1.3;
 		color: #484848;
@@ -349,7 +349,7 @@ section.content-parts {
 	}
 
 	.content {
-		@include f-r;
+		@include f-l;
 		font-size: 20px;
 		color: #484848;
 		p {
@@ -404,7 +404,7 @@ section.list-columns {
 		column-gap: 75px;
 		margin-top: 35px;
 		li {
-			@include f-r;
+			@include f-l;
 			font-size: 20px;
 			color: #484848;
 			margin-top: 35px;
@@ -681,7 +681,7 @@ section.post {
 	}
 
 	.content {
-		@include f-r;
+		@include f-l;
 		font-size: 20px;
 		color: #484848;
 

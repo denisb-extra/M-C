@@ -78,8 +78,11 @@ $lw: 1370px;
 
 
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;600;300&display=swap');
+@mixin p-l {
+	font-family: 'Playfair Display', serif;
+	font-weight: 300;
+}
 @mixin p-b {
 	font-family: 'Playfair Display', serif;
 	font-weight: 700;

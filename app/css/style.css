@@ -1,7 +1,7 @@
 /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;600;300&display=swap");
 /* /Fonts */
 /* Global */
 html {
@@ -144,7 +144,7 @@ section {
   text-align: center; }
   .section-title .subtitle {
     font-family: 'Playfair Display', serif;
-    font-weight: 600;
+    font-weight: 300;
     font-size: 30px;
     color: #393939;
     margin-top: 10px; }
@@ -1331,7 +1331,7 @@ section.top-inner {
 /* ---------------------- Section steps ---------------------- */
 section.steps .content {
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 20px;
   line-height: 1.3;
   color: #484848;
@@ -1558,7 +1558,7 @@ section.content-parts .section-title {
 
 section.content-parts .content {
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 20px;
   color: #484848; }
   section.content-parts .content p {
@@ -1601,7 +1601,7 @@ section.list-columns {
     margin-top: 35px; }
     section.list-columns ul li {
       font-family: 'Lato', sans-serif;
-      font-weight: 400;
+      font-weight: 300;
       font-size: 20px;
       color: #484848;
       margin-top: 35px;
@@ -1813,7 +1813,7 @@ section.post .img-main {
 
 section.post .content {
   font-family: 'Lato', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 20px;
   color: #484848; }
   section.post .content p, section.post .content h1, section.post .content h2, section.post .content h3, section.post .content h4, section.post .content h5 {
