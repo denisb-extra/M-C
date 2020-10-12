@@ -1000,6 +1000,7 @@ section.bottom-index .frame {
   .wpcf7 select {
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     background-image: url("../images/icons/ard.png");
     background-repeat: no-repeat;
     background-position: right 15px center; }
@@ -1805,11 +1806,12 @@ section.post .img-main {
   width: 50%;
   float: right;
   margin-left: 50px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  text-align: right; }
   section.post .img-main.mobile {
     display: none; }
   section.post .img-main img {
-    width: 100%; }
+    max-width: 100%; }
 
 section.post .content {
   font-family: 'Lato', sans-serif;
@@ -2007,3 +2009,91 @@ section.contacts {
             margin-top: 15px; } }
 
 /* --------------------- /Section contacts ---------------------- */
+/* ---------------------- Section blacklist ---------------------- */
+section.blacklist .cat-select {
+  text-align: center;
+  margin-top: 35px; }
+  section.blacklist .cat-select select {
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: #484848;
+    outline: none;
+    border: 1px solid #5dbbce;
+    border-radius: 200px;
+    padding: 15px 25px;
+    min-width: 330px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    cursor: pointer;
+    background-image: url("../images/icons/ard.png");
+    background-repeat: no-repeat;
+    background-position: right 15px center; }
+
+section.blacklist .items {
+  margin-top: 55px; }
+  section.blacklist .items .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    border: 1px solid #12254d;
+    background: #f8fafc;
+    margin-top: 35px; }
+    section.blacklist .items .item .part-logo {
+      width: 20%;
+      flex-shrink: 0;
+      padding: 40px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      section.blacklist .items .item .part-logo img {
+        max-width: 100%; }
+    section.blacklist .items .item .part-info {
+      padding: 40px;
+      flex-grow: 1; }
+      section.blacklist .items .item .part-info .title {
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        font-size: 25px;
+        color: #484848; }
+        section.blacklist .items .item .part-info .title:after {
+          content: "";
+          display: block;
+          height: 6px;
+          width: 90px;
+          background-color: #5dbbce;
+          margin-right: auto;
+          margin-top: 15px; }
+      section.blacklist .items .item .part-info .content {
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: #484848;
+        margin-top: 20px; }
+        section.blacklist .items .item .part-info .content p {
+          margin-top: 15px; }
+    section.blacklist .items .item .part-button {
+      width: 20%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+
+@media only screen and (max-width: 950px) {
+  section.blacklist .cat-select select {
+    font-size: 20px;
+    padding: 10px 15px; }
+  section.blacklist .items .item {
+    flex-wrap: wrap; }
+    section.blacklist .items .item .part-logo {
+      width: 100%;
+      padding: 20px; }
+    section.blacklist .items .item .part-info {
+      padding: 20px; }
+    section.blacklist .items .item .part-button {
+      padding: 20px;
+      width: 100%; } }
+
+/* --------------------- /Section blacklist ---------------------- */

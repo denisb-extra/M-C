@@ -672,11 +672,12 @@ section.post {
 		float: right;
 		margin-left: 50px;
 		margin-bottom: 50px;
+		text-align: right;
 		&.mobile {
 			display: none;
 		}
 		img {
-			width: 100%;
+			max-width: 100%;
 		}
 	}
 
@@ -958,3 +959,114 @@ section.contacts {
 
 }
 /* --------------------- /Section contacts ---------------------- */
+
+
+/* ---------------------- Section blacklist ---------------------- */
+section.blacklist {
+	.cat-select {
+		text-align: center;
+		margin-top: 35px;
+		select {
+			@include t-sb;
+			font-size: 22px;
+			color: #484848;
+			outline: none;
+			border: 1px solid #5dbbce;
+			border-radius: 200px;
+			padding: 15px 25px;
+			min-width: 330px;
+			appearance: none;
+			cursor: pointer;
+			background-image: url("../images/icons/ard.png");
+        	background-repeat: no-repeat;
+        	background-position: right 15px center;
+		}
+	}
+
+
+	.items {
+		margin-top: 55px;
+		.item {
+			display: flex;
+			justify-content: space-between;
+			align-items: stretch;
+			border: 1px solid #12254d;
+			background: #f8fafc;
+			margin-top: 35px;
+
+			.part-logo {
+				width: 20%;
+				flex-shrink: 0;
+				padding: 40px;
+				background: #fff;
+				@include flex-center;
+				img {
+					max-width: 100%;
+				}
+			}
+
+			.part-info {
+				padding: 40px;
+				flex-grow: 1;
+				.title {
+					@include f-b;
+					font-size: 25px;
+					color: #484848;
+					&:after {
+						content: "";
+						display: block;
+						height: 6px;
+						width: 90px;
+						background-color: #5dbbce;
+						margin-right: auto;
+						margin-top: 15px;
+					}
+				}
+
+				.content {
+					@include f-r;
+					font-size: 18px;
+					color: #484848;
+					margin-top: 20px;
+					p {
+						margin-top: 15px;
+					}
+				}
+			}
+
+			.part-button {
+				width: 20%;
+				flex-shrink: 0;
+				@include flex-center;
+			}
+		}
+	}
+
+	@media only screen and (max-width : $mw) {
+		.cat-select {
+			select {
+				font-size: 20px;
+				padding: 10px 15px;
+			}
+		}
+
+		.items {
+			.item {
+				flex-wrap: wrap;
+				.part-logo {
+					width: 100%;
+					padding: 20px;
+				}
+
+				.part-info {
+					padding: 20px;
+				}
+				.part-button {
+					padding: 20px;
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+/* --------------------- /Section blacklist ---------------------- */
